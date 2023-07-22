@@ -1,0 +1,9 @@
+
+class: Debt
+table: debt_tb
+
+fields:
+  creditorName: String
+  debtorName: String
+  debtNominal: double
+  debtDueDate: DateTime

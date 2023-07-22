@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: postgres:14.1
+    ports:
+      - '8090:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: debt_note
+      POSTGRES_PASSWORD: "mtqlpy_Rnv9ppZMW2UVHhq5aahlp593L"
+    volumes:
+      - debt_note_data:/var/lib/postgresql/data
+  redis:
+    image: redis:6.2.6
+    ports:
+      - '8091:6379'
+    command: redis-server --requirepass "I742gWWJKju46itT_r_C9Dj3cgIDPCwA"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+volumes:
+  debt_note_data:
